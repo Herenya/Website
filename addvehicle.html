@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="home, index, frontpage" name="keywords"/>
+<meta content="Add vehicles to the database" name="description" />
+<link href="css/wca.css" rel="stylesheet" type="text/css">
+<title>Add Vehicles</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="banner">
+			<div class="logo">	
+				<img src="images/west_coast_auto_logo.png" width="395" height="140" alt="West Coast Auto" title="West Coast Auto" />
+			</div>
+			<address>
+				<ul>
+					<li><strong>Phone:</strong> 08 9415 1234</li>
+					<li><strong>Email:</strong> ...</li>
+					<li><strong>Address:</strong> 375 Albany Hwy, Victoria Park, Perth WA 6100</li>
+				</ul>
+			</address>
+		</div>	
+		<div class="mainnav">
+			<nav>
+				<ul>
+				    <li><a href="home.html">Home</a></li>
+				    <li><a href="aboutus.html">About Us</a>
+				        <ul>
+				            <li><a href="history.html">History</a></li>
+				            <li><a href="ourvalues.html">Our Values</a></li>
+				        </ul>
+				    </li>
+				    <li><a href="specials.html">Specials</a></li>
+				    <li><a href="usedvehicles.html">Used Vehicles</a></li>			    
+				    <li><a href="finance.html">Finance</a>
+				        <ul>
+				            <li><a href="insurance.html">Insurance</a></li>
+				        </ul>
+				    </li>
+				    <li><a href="testimonials.html">Testimonials</a></li>
+				    <li><a href="contact.html">Contact</a></li>
+				    <li><a href="employeelogin.html">Employee Login</a>
+				    	<ul>
+				    		<li><a href="addclient.html">Add Client</a></li>
+				    		<li><a href="addvehicle.html">Add Vehicle</a></li>
+				    		<li><a href="clients.html">Clients Details</a></li>
+				    		<li><a href="addsalesperson.html">Add Salesperson</a></li>
+				    		<li><a href="salesperson.html">Salesperson Details</a></li>
+				    	</ul>
+				    </li>
+				</ul>
+			</nav>
+		</div>
+		<div class="content">
+			<div class="addvehicle">
+				<form name="addvehicle" id="addvehicle">
+					<h1>Vehicle Form</h1>
+						<label class="carid">												
+						<span>Car Identification: </span>
+							<input id="carid" type="text" name="carid" />
+						</label>
+						<label class="special">
+						<span>Special:</span>
+							<select name="special">
+								<option value="yes">Yes</option>
+								<option value="no">No</option>
+							</select>
+						</label><br>
+						<span>Manufacturer: </span>
+						<label class="manufacturer">
+							<select name="manufacturer">
+								<option value="toyota">Toyota</option>
+								<option value="holden">Holden</option>
+								<option value="ford">Ford</option>
+							</select>
+						</label>
+						<label class="model">												
+						<span>Model: </span>
+							<input id="model" type="text" name="model" />
+						</label><br>
+						<span>Category: </span>
+						<label class="category">
+							<select name="category">
+								<option value="ute">Ute</option>
+								<option value="4wd">4WD</option>
+								<option value="wagon">Wagon</option>
+							</select>
+						</label>
+						<label class="year">
+						<span>Year: </span>
+							<input id="year" type="text" name="year" />
+						</label><br>
+						<span>Price: </span>
+						<label class="price">
+							<input id="price" type="text" name="price" />
+						</label>
+						<label class="kilometres">
+						<span>Kilometres: </span>
+							<input id="kilometres" type="text" name="kilometres" />
+						</label><br>
+						<span>Reg Expiry: </span>
+						<label class="expiry">
+							<input id="expiry" type="text" name="expiry" />
+						</label>
+						<label class="rego">
+						<span>Reg Plate: </span>
+							<input id="rego" type="text" name="rego" />
+						</label><br>
+						<span>Colour: </span>
+						<label class="colour">
+							<select name="colour">
+								<option value="pink">Pink</option>
+								<option value="black">Black</option>
+								<option value="purple">Purple</option>
+							</select>
+						</label>
+						<label class="vin">
+						<span>VIN: </span>
+							<input id="vin" type="text" name="vin" />
+						</label><br>
+						<span>Cylinders: </span>
+						<label class="cylinders">
+							<input id="cylinders" type="text" name="cylinders" />
+						</label>
+						<label class="fuel">
+						<span>Fuel: </span>
+							<input id="fuel" type="text" name="fuel" />
+						</label><br>
+						<span>Transmission: </span>
+						<label class="transmission">
+							<input id="transmission" type="text" name="transmission" />
+						</label>
+						<label class="sold">
+						<span>Sold: </span>
+							<select name="sold">
+								<option value="yes">Yes</option> <!--If sold the car will not show up on the used vehicles page -->
+								<option value="no">No</option>
+							</select>
+						</label><br>
+						<label class="buttonvehicle">
+							<input id="button" type="submit" value="Add Vehicle" />
+						</label>
+				</form>	
+			</div>
+		</div>	
+	</div>
+	<footer>
+		<a href="privacy_policy.html">Privacy Policy </a>
+		<p>© 2013 West Coast Auto</p>
+	</footer>
+</body>
+</html>

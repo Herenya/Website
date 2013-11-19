@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="home, index, frontpage" name="keywords"/>
+<meta content="Home page" name="description" />
+<link href="css/wca.css" rel="stylesheet" type="text/css">
+<title>West Coast Auto</title>
+<script type="text/javascript" src="js/crawler.js">
+
+/* Text and/or Image Crawler Script v1.53 (c)2009-2011 John Davenport Scheuer
+   as first seen in http://www.dynamicdrive.com/forums/
+   username: jscheuer1 - This Notice Must Remain for Legal Use
+*/
+
+</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="banner">
+			<div class="logo">	
+				<img src="images/west_coast_auto_logo.png" width="395" height="140" alt="West Coast Auto" title="West Coast Auto" />
+			</div>
+			<address>
+				<ul>
+					<li><strong>Phone:</strong> 08 9415 1234</li>
+					<li><strong>Email:</strong> ...</li>
+					<li><strong>Address:</strong> 375 Albany Hwy, Victoria Park, Perth WA 6100</li>
+				</ul>
+			</address>
+		</div>	
+		<div class="mainnav">
+			<nav>
+				<ul>
+				    <li><a href="home.html">Home</a></li>
+				    <li><a href="aboutus.html">About Us</a>
+				        <ul>
+				            <li><a href="history.html">History</a></li>
+				            <li><a href="ourvalues.html">Our Values</a></li>
+				        </ul>
+				    </li>
+				    <li><a href="specials.html">Specials</a></li>
+				    <li><a href="usedvehicles.html">Used Vehicles</a></li>			    
+				    <li><a href="finance.html">Finance</a>
+				        <ul>
+				            <li><a href="insurance.html">Insurance</a></li>
+				        </ul>
+				    </li>
+				    <li><a href="testimonials.html">Testimonials</a></li>
+				    <li><a href="contact.html">Contact</a></li>
+				    <li><a href="employeelogin.html">Employee Login</a>
+				    	<ul>
+				    		<li><a href="addclient.html">Add Client</a></li>
+				    		<li><a href="addvehicle.html">Add Vehicle</a></li>
+				    		<li><a href="clients.html">Clients Details</a></li>
+				    		<li><a href="addsalesperson.html">Add Salesperson</a></li>
+				    		<li><a href="salesperson.html">Salesperson Details</a></li>
+				    	</ul>
+				    </li>
+				</ul>
+			</nav>
+		</div>
+		<div class="content">
+			<div class="carbanner marquee" id="mycrawlertop">
+				<img src="images/smallcarbanner.jpeg" width="1200" height="100" alt="West Coast Auto" title="Car Banner" />
+			</div>
+			<div class="introduction">
+				<h1>Welcome To West Coast Auto!</h1>
+					<p>What do you expect from a used car? <br> A fair price? <br> High quality? <br> A guarantee that the vehicle you buy is in top condition? <br> West Coast Auto used cars meet all of these expectations plus many more. Purchasing your preferred car has never been easier thanks to our flexible finance options and, once you're behind the wheel, roadside assistance is on hand to offer qualified support in the unlikely event of a breakdown.</p> <!--Taken from http://www.bmw.com/com/en/usedvehicles/information/introduction.html and altered to suit the purpose of this page -->
+			</div>
+			<div class="carbanner marquee" id="mycrawlerbottom">
+				<img src="images/smallcarbanner.jpeg" width="1200" height="100" alt="West Coast Auto" title="Car Banner" />
+			</div>
+		</div>	
+	</div>
+	<footer>
+		<a href="privacy_policy.html">Privacy Policy </a> 
+		<p>© 2013 West Coast Auto</p>
+	</footer>
+	<script type="text/javascript">
+		marqueeInit({
+			uniqueid: 'mycrawlertop',
+			inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+			mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+			moveatleast: 2,
+			neutral: 150,
+			savedirection: true,
+			random: true
+		});
+		marqueeInit({
+			uniqueid: 'mycrawlerbottom',
+			inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+			mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+			moveatleast: 2,
+			direction: "right",
+			neutral: 150,
+			savedirection: true,
+			random: true
+		});
+	</script>
+</body>
+</html>

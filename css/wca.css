@@ -1,0 +1,745 @@
+/* Header definitions*/
+.banner {
+	height: auto;	
+	width: 1200px;
+	display: inline-block;
+}
+
+.logo {
+	float: left;
+	display: inline-block;
+	height: 140px;
+	width: 395px;
+	margin-right: 10px;
+}
+
+address {
+	font-style: normal;
+	float: right;
+	height: 140px;
+	width: 395px;
+	color: #298A08;
+	font-size: 18px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+}
+
+address ul li {
+	margin: 10px 0px 10px 0px;
+	list-style: none;
+}
+/*End header definitions*/
+
+
+/* Main navigation definitions */
+.mainnav {
+	text-align: center;
+	height: 30px;
+	margin: 10px 0px 20px 0px;
+}
+
+nav ul {
+    font-family: Arial, Verdana;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 1;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+nav li ul {
+    display: none;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    background: #298A08;
+    color: #ffffff;
+    padding: 5px 15px 5px 15px;
+    margin-left: 1px;
+    white-space: nowrap;
+}
+
+nav ul li a:hover {
+	background: #31B404;
+	padding: 5px 15px 5px 15px;
+}
+
+nav li:hover ul {
+    display: block;
+    position: absolute;
+    text-align: left;
+}
+
+nav li:hover li {
+    float: none;
+    font-size: 12px;
+}
+
+nav li:hover li a:hover {
+    background: #31B404;
+}
+
+nav a:visited { 
+	background-color: #0B610B;
+}
+/* End main navigation definitions*/
+
+/*Content definitions */
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #F2FBEF;
+	margin-bottom: 10px;
+}
+.introduction {
+	padding: 10px 10px 10px 10px;
+	text-align: center;
+}
+
+.history {
+	padding: 10px 10px 10px 10px;
+}
+
+.values {
+	padding: 10px 10px 10px 10px;
+}
+
+.values ul {
+	margin-left: 40px;
+}
+
+.finance {
+	padding: 10px 10px 10px 10px;
+}
+
+.finance ul {
+	margin-left: 40px;
+}
+
+.finance ol {
+	margin-left: 40px;
+}
+
+.insurance {
+	padding: 10px 10px 10px 10px;
+}
+
+.privacy {
+	padding: 10px 10px 10px 10px;
+}
+
+.car {
+	float: right;
+}
+
+.car2 {
+	float: left;
+}
+
+.description {
+	height: 337px;
+	width: 640px;
+	padding: 0px 15px 0px 30px;
+}
+
+.description1 {
+	height: 337px;
+	padding: 0px 30px 0px 15px;
+	margin-left: 500px;
+}
+
+.carheading {
+	font-size: 25px;
+	color: #298A08;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	font-weight: bold;
+	padding: 120px 0px 10px 0px;
+	margin: 0;
+}
+
+.divider {
+	margin: 80px 0;
+	width: 1200px;
+}
+
+.divider2 {
+	width: 1180px;
+	margin: 25px 0px 25px 0px;
+}
+
+.contactus {
+	width: 580px;
+	padding: 10px 10px 10px 10px;
+	margin-left: 170px;
+}
+
+.specialleft {
+	float: left;
+	margin-left: 120px;
+}
+
+.specialright {
+	float: right;
+	margin-right: 120px;
+}
+
+.carlist {
+	list-style: none;
+	font-size: 15px;
+	padding-left: 20px;
+}
+
+.testimonial {
+	padding: 10px 10px 10px 10px;
+}
+
+.images_full img {
+	display: block;
+	margin-bottom: 10px;
+	width: 348px;
+	height: 200px;
+}
+
+.images_full img,
+.images_thumbnails img {
+  padding:3px;
+  border:1px solid #CCC;
+}
+
+.images_thumbnails img {
+  margin:4px;
+  width: 100px;
+  height: 100px;
+}
+/*End content definitions*/
+
+/*Contact form definitions*/
+.contactform {
+	float: right;
+	width: 220px;
+	padding: 10px 10px 10px 10px;
+	margin-top: -610px;
+	margin-right: 160px;
+}
+
+.contactform span {
+	height: 100px;
+	font-size: 20px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	height: 100px;
+	color: #298A08;
+}
+
+.contactform input {
+	margin: 10px 0px 10px 0px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	border-radius: 5px;
+	border: 2px groove #298A08;
+	width: 200px;
+}
+
+.contactform textarea {
+	margin-top: 10px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	border: 2px groove #298A08;
+	border-radius: 5px;
+	width: 200px;
+	height: 100px;
+}
+
+.contactform #button {
+	font-weight: bold;
+	border-color: #298A08;
+	color: #298A08;
+	padding: 5px 20px 5px 20px;
+}
+
+.contactform #button:hover {
+	color: #31B404;
+}
+/*End contact form definitions*/
+
+/*Login form definitions*/
+.login form {
+	padding: 20px 20px 20px 20px;
+	width: 350px;
+	height: auto;
+	margin-left: 401px;
+	border: 4px groove #298A08;
+	border-radius: 5px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+}
+
+.login span {
+	font-size: 20px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	height: 100px;
+	color: #298A08;
+	margin-right: 20px;
+}
+
+.login input {
+	margin: 15px 0px 15px 0px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	border-radius: 5px;
+	border: 2px groove #298A08;
+}
+
+.loginemail input {
+	margin-left: 90px;
+}
+
+.password input {
+	margin-left: 50px;
+}
+
+.buttonlogin {
+	margin-left: 136px;
+}
+
+.login #button {
+	font-weight: bold;
+	border-color: #298A08;
+	color: #298A08;
+	padding: 5px 20px 5px 20px;
+}
+
+.login #button:hover {
+	color: #31B404;
+}
+
+form a {
+	font-size: 12px;
+	margin-left: 112px;
+}
+
+/*End login form definitions*/
+
+/*Client form definitions*/
+.addclient form {
+	padding: 20px 20px 20px 20px;
+	width: 800px;
+	height: auto;
+	margin-left: 177px;
+	border: 4px groove #298A08;
+	border-radius: 5px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+}
+
+.addclient span {
+	font-size: 20px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	height: 100px;
+	color: #298A08;
+}
+
+.addclient input {
+	margin-top: 60px;
+	margin-left: 30px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	border-radius: 5px;
+	border: 2px groove #298A08;
+}
+
+
+.addclient #button {
+	font-weight: bold;
+	border-color: #298A08;
+	color: #298A08;
+	padding: 5px 20px 5px 20px;
+}
+
+.addclient #button:hover {
+	color: #31B404;
+}
+
+.firstname {
+	margin-left: 57px;
+}
+
+.lastname {
+	margin-left: 87px;
+}
+
+.lastname input {
+	margin-left: 70px;
+}
+
+.address {
+	margin-left: 80px;
+}
+
+.suburb {
+	margin-left: 90px;
+}
+
+.suburb input {
+	margin-left: 99px;
+}
+
+.postcode {
+	margin-left: 70px;
+}
+
+.phone {
+	margin-left: 90px;
+}
+
+.phone input {
+	margin-left: 106px;
+}
+
+.clientemail {
+	margin-left: 105px;
+}
+
+.salesperson {
+	margin-left: 90px;
+}
+
+.salesperson input {
+	margin-left: 52px;
+}
+
+.purchase input {
+	margin-right: -29px;
+}
+
+.clientcar {
+	margin-left: 118px;
+}
+
+.buttonclient {
+	margin-left: 315px;
+}
+/*End client form definitions*/
+
+/*Salesperson form definitions*/
+.addsalesperson form {
+	padding: 20px 20px 20px 20px;
+	width: 800px;
+	height: auto;
+	margin-left: 177px;
+	border: 4px groove #298A08;
+	border-radius: 5px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+}
+
+.addsalesperson span {
+	font-size: 20px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	height: 100px;
+	color: #298A08;
+}
+
+.addsalesperson input {
+	margin-top: 60px;
+	margin-left: 30px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	border-radius: 5px;
+	border: 2px groove #298A08;
+}
+
+
+.addsalesperson #button {
+	font-weight: bold;
+	border-color: #298A08;
+	color: #298A08;
+	padding: 5px 20px 5px 20px;
+}
+
+.addsalesperson #button:hover {
+	color: #31B404;
+}
+
+.salespersonid input {
+	margin-left: 40px;
+}
+
+.salespersonname {
+	margin-left: 149px;
+}
+
+.salespersonname input {
+	margin-left: 60px;
+}
+
+.salespersonphone input {
+	margin-left: 120px;
+}
+
+.salespersonemail {
+	margin-left: 148px;
+}
+
+.salespersonemail input {
+	margin-left: 63px;
+}
+
+.buttonsales {
+	margin-left: 295px;
+}
+/*End salesperson form definitions*/
+
+/*Vehicle form definitions*/
+.addvehicle form {
+	padding: 20px 20px 20px 20px;
+	width: 800px;
+	height: auto;
+	margin-left: 177px;
+	border: 4px groove #298A08;
+	border-radius: 5px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+}
+
+.addvehicle span {
+	font-size: 20px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	height: 100px;
+	color: #298A08;
+}
+
+.addvehicle input {
+	margin-top: 60px;
+	margin-left: 30px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	border-radius: 5px;
+	border: 2px groove #298A08;
+}
+
+.addvehicle select {
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	border-radius: 5px;
+	border: 2px groove #298A08;
+	width: 153px;
+	height: 23px;
+	color: #298A08;
+	padding: 1px 0px 1px 0px;
+}
+
+.addvehicle #button {
+	font-weight: bold;
+	border-color: #298A08;
+	color: #298A08;
+	padding: 5px 20px 5px 20px;
+}
+
+.addvehicle #button:hover {
+	color: #31B404;
+}
+
+.carid input {
+	margin-left: 27px;
+}
+
+.special {
+	margin-left: 100px;
+}
+
+.special select {
+	margin-left: 97px;
+}
+
+.manufacturer {
+	margin-left: 59px;
+}
+
+.model {
+	margin-left: 102px;
+}
+
+.model input {
+	margin-left: 105px;
+}
+
+.category {
+	margin-left: 94px;
+}
+
+.year {
+	margin-left: 103px;
+}
+
+.year input {
+	margin-left: 115px;
+}
+
+.price {
+	margin-left: 100px;
+}
+
+.kilometres {
+	margin-left: 101px;
+}
+
+.kilometres input {
+	margin-left: 65px;
+}
+
+.expiry {
+	margin-left: 48px;
+}
+
+.rego {
+	margin-left: 101px;
+}
+
+.rego input {
+	margin-left: 72px;
+}
+
+.colour {
+	margin-left: 118px;
+}
+
+.vin {
+	margin-left: 103px;
+}
+
+.vin input {
+	margin-left: 126px;
+}
+
+.cylinders {
+	margin-left: 64px;
+}
+
+.fuel {
+	margin-left: 102px;
+}
+
+.fuel input {
+	margin-left: 121px;
+}
+
+.transmission {
+	margin-left: 30px;
+}
+
+.sold {
+	margin-left: 100px;
+}
+
+.sold select {
+	margin-left: 120px;
+}
+
+.buttonvehicle {
+	margin-left: 315px;
+}
+/*End vehicle form definitions*/
+
+/*Client table definitions*/
+.clienttable {
+	border-collapse:collapse;
+	margin-left: 58px;
+}
+
+.clienttable th, td {
+	border: 3px solid #31B404;
+	height:30px;
+	vertical-align:bottom;
+}
+
+th {
+	text-align: center;
+	color: #000000;
+	font-size: 18px;
+	padding: 5px;
+}
+
+td {
+	padding: 2px;
+	font-size: 14px;
+}
+/*End client table definitions*/
+.employees {
+	border-collapse:collapse;
+	margin-left: 333px;
+}
+
+.employees th, td {
+	border: 3px solid #31B404;
+	height:30px;
+	vertical-align:bottom;
+}
+
+th {
+	text-align: center;
+	color: #000000;
+	font-size: 18px;
+	padding: 5px;
+}
+
+td {
+	padding: 2px;
+	font-size: 14px;
+	padding-left: 5px;
+}
+/*Salesperson table definitions*/
+
+/*End of salesperson table definitions*/
+
+/*General Definitions*/
+body {
+	background-color: #F2FBEF;
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	font-size: 16px;
+	min-height: 100%;
+	color: #000000;
+
+}
+
+h1 {
+	font-size: 40px;
+	color: #0B610B;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	text-align: center;
+}
+
+h2 {
+	font-size: 25px;
+	color: #0B610B;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	margin: 10px 0px 10px 0px;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #298A08;
+	height: 0;
+}
+
+p {
+	font-size: 16px;
+	color: #000000;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+}
+/*End general definitions*/
+
+/*Footer definitions*/
+footer {
+	clear: both;
+	text-align: center;
+	font-size: 10px;
+	margin-top: 10px;
+	padding-bottom: 5px;	
+}
+
+footer p {
+	margin: 0px 0px 0px 0px;
+	font-size: 10px;
+}
+
+footer a {
+	font-size: 12px;
+}
+/*End footer definitions*/
