@@ -14,26 +14,74 @@
 		<?php include 'top.php'; ?>
 		<div class="content">
 		<?php if (isset($_SESSION['user'])): ?>
+			<?php include "credentials.php";
+			// // define variables and set to empty values
+			$name = $email = $phone = $pword = "";
+
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+				$name = $_POST["name"];
+				$email = $_POST["email"];
+				$phone = $_POST["phone"];
+				$pword = $_POST["password"];
+
+				$tbl_name="salesperson"; // Table name 
+
+				// Connect to server and select databse.
+				mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+				mysql_select_db("$db_name")or die("cannot select DB");
+
+				$sql="INSERT INTO $tbl_name (Name, Phone, Email, Password) VALUES ('$name', '$phone', '$email', '$pword')";
+				$result=mysql_query($sql);
+			}
+
+			?>
+			<div class="addsalesperson">
+				<form name="addsalesperson" id="addsalesperson" method="post">
+					<h2>Add New Salesperson</h2>
+					<label>
+					<span>Name: </span>
+						<input id="name" class="inputLeft" type="text" name="name" />
+					</label>
+					<label>
+					<span>Phone: </span>
+						<input id="phone" type="text" name="phone" />
+					</label><br />
+					<label>
+					<span>Email: </span>
+						<input id="email" class="inputLeft" type="text" name="email" />
+					</label>
+					<label>
+					<span>Password: </span>
+						<input id="password" type="text" name="password" />
+					</label><br />
+					<label>
+						<input id="button" type="submit" value="Add Salesperson" />
+					</label>
+				</form>	
+			</div>
 			<h1>Salesperson Details</h1>
 			<table class="employees">
 				<tr>
 					<th>Name</th>
 					<th>Phone</th>
 					<th>Email</th>
-					<th>Number of Clients</th> <!--Based off the database we will be able to automatically input how many clients this salesperson has seen -->
 				</tr>
+				<?php include "credentials.php";
+				$tbl_name="salesperson"; // Table name 
+
+				// Connect to server and select databse.
+				mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+				mysql_select_db("$db_name")or die("cannot select DB");
+
+				$sql="SELECT Name, Phone, Email FROM $tbl_name";
+				$result=mysql_query($sql);
+				while($row = mysql_fetch_assoc($result)) {?>
 				<tr>
-					<td>Lisa Rowe</td>
-					<td>0402546332</td>
-					<td>Lisa@WCA.com</td>
-					<td>10</td>
+					<td><?php echo $row["Name"]; ?></td>
+					<td><?php echo $row["Phone"]; ?></td>
+					<td><?php echo $row["Email"]; ?></td>
 				</tr>
-				<tr>
-					<td>Glen Freeman</td>
-					<td>0788763522</td>
-					<td>Glenfreeman@WCA.com</td>
-					<td>3</td>
-				</tr>
+				<?php } ?>
 			</table>
 		<?php else: ?>
 		<h1>Not Authenticated</h1>

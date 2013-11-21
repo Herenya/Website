@@ -33,10 +33,8 @@
 				    <?php if (isset($_SESSION['user'])): ?>
 				    <li><a href="#">Admin</a>
 				    	<ul>
-				    		<li><a href="addclient.php">Add Client</a></li>
 				    		<li><a href="addvehicle.php">Add Vehicle</a></li>
 				    		<li><a href="clients.php">Clients Details</a></li>
-				    		<li><a href="addsalesperson.php">Add Salesperson</a></li>
 				    		<li><a href="salesperson.php">Salesperson Details</a></li>
 				    	</ul>
 				    </li>
