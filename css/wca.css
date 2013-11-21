@@ -134,24 +134,25 @@ nav a:visited {
 	padding: 10px 10px 10px 10px;
 }
 
-.car {
+.carRight {
 	float: right;
+	margin-right: 100px;
 }
 
-.car2 {
+.carLeft {
 	float: left;
+	margin-left: 150px;
 }
 
-.description {
-	height: 337px;
-	width: 640px;
+.descRight {
+	margin-left: 100px;
+	width: 500px;
 	padding: 0px 15px 0px 30px;
 }
 
-.description1 {
-	height: 337px;
+.descLeft {
 	padding: 0px 30px 0px 15px;
-	margin-left: 500px;
+	margin-left: 750px;
 }
 
 .carheading {
@@ -177,6 +178,11 @@ nav a:visited {
 	width: 580px;
 	padding: 10px 10px 10px 10px;
 	margin-left: 170px;
+}
+
+.special {
+	display: inline-block;
+	width: 500px;
 }
 
 .specialleft {
@@ -556,6 +562,8 @@ hr {
 p {
 	font-size: 16px;
 	color: #000000;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	font-family: sans-serif, Helvetica, Arial, Verdana;
 }
 /*End general definitions*/

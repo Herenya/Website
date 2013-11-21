@@ -86,104 +86,104 @@
 			<div class="addvehicle">
 				<form name="addvehicle" enctype="multipart/form-data" id="addvehicle" method="POST">
 					<h2>Vehicle Form</h2>
-						<label>												
-						<span>Car Identification: </span>
-							<input id="carid" class="inputLeft" type="text" name="carid" />
-						</label>
-						<label>
-						<span>Special:</span>
-							<select name="special">
-								<option value="0">No</option>
-								<option value="1">Yes</option>
-							</select>
-						</label><br>
-						<label>
-						<span>Manufacturer: </span>
-							<select class="inputLeft" name="manufacturer">
-								<option value="Toyota">Toyota</option>
-								<option value="Holden">Holden</option>
-								<option value="Ford">Ford</option>
-							</select>
-						</label>
-						<label>												
-						<span>Model: </span>
-							<input id="model" type="text" name="model" />
-						</label><br>
-						<label>
-						<span>Category: </span>
-							<select class="inputLeft" name="category">
-								<option value="Ute">Ute</option>
-								<option value="4WD">4WD</option>
-								<option value="Wagon">Wagon</option>
-							</select>
-						</label>
-						<label>
-						<span>Year: </span>
-							<input id="year" type="text" name="year" />
-						</label><br>
-						<label>
-						<span>Price: </span>
-							<input class="inputLeft" id="price" type="text" name="price" />
-						</label>
-						<label>
-						<span>Kilometres: </span>
-							<input id="kilometres" type="text" name="kilometres" />
-						</label><br>
-						<label>
-						<span>Reg Expiry: </span>
-							<input class="inputLeft" id="expiry" type="text" name="expiry" />
-						</label>
-						<label>
-						<span>Reg Plate: </span>
-							<input id="rego" type="text" name="rego" />
-						</label><br>
-						<label>
-						<span>Colour: </span>
-							<select class="inputLeft" name="colour">
-								<option value="pink">Pink</option>
-								<option value="black">Black</option>
-								<option value="purple">Purple</option>
-							</select>
-						</label>
-						<label>
-						<span>VIN: </span>
-							<input id="vin" type="text" name="vin" />
-						</label><br>
-						<label>
-						<span>Cylinders: </span>
-							<input class="inputLeft" id="cylinders" type="text" name="cylinders" />
-						</label>
-						<label>
-						<span>Fuel: </span>
-							<input id="fuel" type="text" name="fuel" />
-						</label><br>
-						<label>
-						<span>Transmission: </span>
-							<input class="inputLeft" id="transmission" type="text" name="transmission" />
-						</label>
-						<label>
-						<span>Sold: </span>
-							<select name="sold">
-								<option value="0">No</option> <!--If sold the car will not show up on the used vehicles page -->
-								<option value="1">Yes</option>
-							</select>
-						</label><br>
-						<label>
-						<span>Image1: </span>
-							<input name="MAX_FILE_SIZE" value="102400" type="hidden">
-							<input class="inputLeft" id="img1" accept="image/*" type="file" name="img1" />
-						</label>
-						<label>
-						<span>Image2: </span>
-							<input id="img2" accept="image/*" type="file" name="img2" />
-						</label><br />
-						<label>
-						<span>Image3: </span>
-							<input class="inputLeft" id="img3" accept="image/*" type="file" name="img3" />
-						</label><br />
-						<label class="buttonvehicle">
-							<input id="button" type="submit" value="Add Vehicle" />
-						</label>
+					<label>												
+					<span>Car Identification: </span>
+						<input id="carid" class="inputLeft" type="text" name="carid" />
+					</label>
+					<label>
+					<span>Special:</span>
+						<select name="special">
+							<option value="0">No</option>
+							<option value="1">Yes</option>
+						</select>
+					</label><br>
+					<label>
+					<span>Manufacturer: </span>
+						<select class="inputLeft" name="manufacturer">
+							<option value="Toyota">Toyota</option>
+							<option value="Holden">Holden</option>
+							<option value="Ford">Ford</option>
+						</select>
+					</label>
+					<label>												
+					<span>Model: </span>
+						<input id="model" type="text" name="model" />
+					</label><br>
+					<label>
+					<span>Category: </span>
+						<select class="inputLeft" name="category">
+							<option value="Ute">Ute</option>
+							<option value="4WD">4WD</option>
+							<option value="Wagon">Wagon</option>
+						</select>
+					</label>
+					<label>
+					<span>Year: </span>
+						<input id="year" type="text" name="year" />
+					</label><br>
+					<label>
+					<span>Price: </span>
+						<input class="inputLeft" id="price" type="text" name="price" />
+					</label>
+					<label>
+					<span>Kilometres: </span>
+						<input id="kilometres" type="text" name="kilometres" />
+					</label><br>
+					<label>
+					<span>Reg Expiry: </span>
+						<input class="inputLeft" id="expiry" type="text" name="expiry" />
+					</label>
+					<label>
+					<span>Reg Plate: </span>
+						<input id="rego" type="text" name="rego" />
+					</label><br>
+					<label>
+					<span>Colour: </span>
+						<select class="inputLeft" name="colour">
+							<option value="pink">Pink</option>
+							<option value="black">Black</option>
+							<option value="purple">Purple</option>
+						</select>
+					</label>
+					<label>
+					<span>VIN: </span>
+						<input id="vin" type="text" name="vin" />
+					</label><br>
+					<label>
+					<span>Cylinders: </span>
+						<input class="inputLeft" id="cylinders" type="text" name="cylinders" />
+					</label>
+					<label>
+					<span>Fuel: </span>
+						<input id="fuel" type="text" name="fuel" />
+					</label><br>
+					<label>
+					<span>Transmission: </span>
+						<input class="inputLeft" id="transmission" type="text" name="transmission" />
+					</label>
+					<label>
+					<span>Sold: </span>
+						<select name="sold">
+							<option value="0">No</option> <!--If sold the car will not show up on the used vehicles page -->
+							<option value="1">Yes</option>
+						</select>
+					</label><br>
+					<label>
+					<span>Image1: </span>
+						<input name="MAX_FILE_SIZE" value="1024000" type="hidden">
+						<input class="inputLeft" id="img1" accept="image/*" type="file" name="img1" />
+					</label>
+					<label>
+					<span>Image2: </span>
+						<input id="img2" accept="image/*" type="file" name="img2" />
+					</label><br />
+					<label>
+					<span>Image3: </span>
+						<input class="inputLeft" id="img3" accept="image/*" type="file" name="img3" />
+					</label><br />
+					<label class="buttonvehicle">
+						<input id="button" type="submit" value="Add Vehicle" />
+					</label>
 				</form>	
 			</div>
 		<?php else: ?>

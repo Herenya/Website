@@ -26,7 +26,7 @@
 			</div>
 			<div class="contactform">
 				<form id="contact" name="contact" onsubmit="checkContactForm('contact')">
-					<h2>Contact Form:</h2>
+					<h2 style="margin-top:60px">Contact Form:</h2>
 						<label class="contactemail">
 						<span>Email:</span><br>
 							<input id="email" type="text" name="email" />

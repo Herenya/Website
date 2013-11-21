@@ -9,7 +9,7 @@
 
 	$sql="SELECT $image FROM $tbl_name WHERE CarID='$id'";
 	$result=mysql_query($sql);
-	header("Content-type: image/jpeg");
+	header("Content-type: image/*");
     echo mysql_result($result, 0);
 
 ?>
