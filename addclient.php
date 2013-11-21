@@ -11,50 +11,9 @@
 
 <body>
 	<div class="wrapper">
-		<div class="banner">
-			<div class="logo">	
-				<img src="images/west_coast_auto_logo.png" width="395" height="140" alt="West Coast Auto" title="West Coast Auto" />
-			</div>
-			<address>
-				<ul>
-					<li><strong>Phone:</strong> 08 9415 1234</li>
-					<li><strong>Email:</strong> ...</li>
-					<li><strong>Address:</strong> 375 Albany Hwy, Victoria Park, Perth WA 6100</li>
-				</ul>
-			</address>
-		</div>	
-		<div class="mainnav">
-			<nav>
-				<ul>
-				    <li><a href="home.html">Home</a></li>
-				    <li><a href="aboutus.html">About Us</a>
-				        <ul>
-				            <li><a href="history.html">History</a></li>
-				            <li><a href="ourvalues.html">Our Values</a></li>
-				        </ul>
-				    </li>
-				    <li><a href="specials.html">Specials</a></li>
-				    <li><a href="usedvehicles.html">Used Vehicles</a></li>			    
-				    <li><a href="finance.html">Finance</a>
-				        <ul>
-				            <li><a href="insurance.html">Insurance</a></li>
-				        </ul>
-				    </li>
-				    <li><a href="testimonials.html">Testimonials</a></li>
-				    <li><a href="contact.html">Contact</a></li>
-				    <li><a href="employeelogin.html">Employee Login</a>
-				    	<ul>
-				    		<li><a href="addclient.html">Add Client</a></li>
-				    		<li><a href="addvehicle.html">Add Vehicle</a></li>
-				    		<li><a href="clients.html">Clients Details</a></li>
-				    		<li><a href="addsalesperson.html">Add Salesperson</a></li>
-				    		<li><a href="salesperson.html">Salesperson Details</a></li>
-				    	</ul>
-				    </li>
-				</ul>
-			</nav>
-		</div>
+		<?php include 'top.php'; ?>
 		<div class="content">
+		<?php if (isset($_SESSION['user'])): ?>
 			<div class="addclient">
 				<form name="addclient" id="addclient">
 					<h1>Client Form</h1>
@@ -102,7 +61,10 @@
 							<input id="button" type="submit" value="Add Client" />
 						</label>
 				</form>	
-			</div>	
+			</div>
+			<?php else: ?>
+			<h1>Not Authenticated</h1>
+			<?php endif; ?>
 		</div>	
 	</div>
 	<footer>
