@@ -98,16 +98,20 @@ nav a:visited {
 	margin-bottom: 10px;
 }
 .introduction {
-	padding: 10px 10px 10px 10px;
+	padding: 15px;
 	text-align: center;
 }
 
+.about {
+	padding: 15px;
+}
+
 .history {
-	padding: 10px 10px 10px 10px;
+	padding: 15px;
 }
 
 .values {
-	padding: 10px 10px 10px 10px;
+	padding: 15px;
 }
 
 .values ul {
@@ -115,7 +119,7 @@ nav a:visited {
 }
 
 .finance {
-	padding: 10px 10px 10px 10px;
+	padding: 15px;
 }
 
 .finance ul {
@@ -127,11 +131,11 @@ nav a:visited {
 }
 
 .insurance {
-	padding: 10px 10px 10px 10px;
+	padding: 15px;
 }
 
 .privacy {
-	padding: 10px 10px 10px 10px;
+	padding: 15px;
 }
 
 .carRight {
@@ -202,7 +206,7 @@ nav a:visited {
 }
 
 .testimonial {
-	padding: 10px 10px 10px 10px;
+	padding: 15px;
 }
 
 .images_full img {

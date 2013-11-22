@@ -16,22 +16,25 @@
 		<?php if (isset($_SESSION['user'])): ?>
 			<?php include "credentials.php";
 			// // define variables and set to empty values
-			$name = $email = $phone = $pword = "";
+			$name = $email = $phone = $pword = $formError = "";
+			$formError = false;
 
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
-				$name = $_POST["name"];
-				$email = $_POST["email"];
-				$phone = $_POST["phone"];
-				$pword = $_POST["password"];
+				if (!empty($_POST["name"])){$name = $_POST["name"];} else {$formError = true;}
+				if (!empty($_POST["email"])){$email = $_POST["email"];} else {$formError = true;}
+				if (!empty($_POST["phone"])){$phone = $_POST["phone"];} else {$formError = true;}
+				if (!empty($_POST["password"])){$pword = $_POST["password"];} else {$formError = true;}
 
-				$tbl_name="salesperson"; // Table name 
+				if (!$formError){
+					$tbl_name="salesperson"; // Table name 
 
-				// Connect to server and select databse.
-				mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
-				mysql_select_db("$db_name")or die("cannot select DB");
+					// Connect to server and select databse.
+					mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+					mysql_select_db("$db_name")or die("cannot select DB");
 
-				$sql="INSERT INTO $tbl_name (Name, Phone, Email, Password) VALUES ('$name', '$phone', '$email', '$pword')";
-				$result=mysql_query($sql);
+					$sql="INSERT INTO $tbl_name (Name, Phone, Email, Password) VALUES ('$name', '$phone', '$email', '$pword')";
+					$result=mysql_query($sql);
+				}
 			}
 
 			?>
@@ -40,19 +43,27 @@
 					<h2>Add New Salesperson</h2>
 					<label>
 					<span>Name: </span>
-						<input id="name" class="inputLeft" type="text" name="name" />
+						<input id="name" class="inputLeft" type="text" name="name"
+							<?php if ($formError){if(empty($name)){echo 'placeholder="Required"';}else{echo 'value="'.$name.'"';}}?>
+						/>
 					</label>
 					<label>
 					<span>Phone: </span>
-						<input id="phone" type="text" name="phone" />
+						<input id="phone" type="text" name="phone" 
+							<?php if ($formError){if(empty($phone)){echo 'placeholder="Required"';}else{echo 'value="'.$phone.'"';}}?>
+						/>
 					</label><br />
 					<label>
 					<span>Email: </span>
-						<input id="email" class="inputLeft" type="text" name="email" />
+						<input id="email" class="inputLeft" type="text" name="email"
+							<?php if ($formError){if(empty($email)){echo 'placeholder="Required"';}else{echo 'value="'.$email.'"';}}?>
+						/>
 					</label>
 					<label>
 					<span>Password: </span>
-						<input id="password" type="text" name="password" />
+						<input id="password" type="text" name="password" 
+							<?php if ($formError){if(empty($pword)){echo 'placeholder="Required"';}else{echo 'value="'.$pword.'"';}}?>
+						/>
 					</label><br />
 					<label>
 						<input id="button" type="submit" value="Add Salesperson" />
@@ -62,6 +73,7 @@
 			<h1>Salesperson Details</h1>
 			<table class="employees">
 				<tr>
+					<th>ID</th>
 					<th>Name</th>
 					<th>Phone</th>
 					<th>Email</th>
@@ -73,10 +85,11 @@
 				mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
 				mysql_select_db("$db_name")or die("cannot select DB");
 
-				$sql="SELECT Name, Phone, Email FROM $tbl_name";
+				$sql="SELECT * FROM $tbl_name";
 				$result=mysql_query($sql);
 				while($row = mysql_fetch_assoc($result)) {?>
 				<tr>
+					<td><?php echo $row["SalespersonID"]; ?></td>
 					<td><?php echo $row["Name"]; ?></td>
 					<td><?php echo $row["Phone"]; ?></td>
 					<td><?php echo $row["Email"]; ?></td>
@@ -89,7 +102,7 @@
 		</div>	
 	</div>
 	<footer>
-		<a href="privacy_policy.html">Privacy Policy </a>
+		<a href="privacy_policy.php">Privacy Policy </a>
 		<p>© 2013 West Coast Auto</p>
 	</footer>
 </body>

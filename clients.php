@@ -17,32 +17,34 @@
 			<?php include "credentials.php";
 			// // define variables and set to empty values
 			$firstname = $lastname = $address = $suburb = $postcode = $email = $phone = $salesperson = $purchase = $car = "";
+			$formError = $dbError = false;
 
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
-				$firstname = $_POST["firstname"];
-				$lastname = $_POST["lastname"];
-				$address = $_POST["address"];
-				$suburb = $_POST["suburb"];
-				$postcode = $_POST["postcode"];
-				$email = $_POST["email"];
-				$phone = $_POST["phone"];
-				$salesperson = $_POST["salesperson"];
-				$purchase = $_POST["purchase"];
-				$car = $_POST["car"];
+				if (!empty($_POST["firstname"])){$firstname = $_POST["firstname"];} else {$formError = true;}
+				if (!empty($_POST["lastname"])){$lastname = $_POST["lastname"];} else {$formError = true;}
+				if (!empty($_POST["address"])){$address = $_POST["address"];} else {$formError = true;}
+				if (!empty($_POST["suburb"])){$suburb = $_POST["suburb"];} else {$formError = true;}
+				if (!empty($_POST["postcode"])){$postcode = $_POST["postcode"];} else {$formError = true;}
+				if (!empty($_POST["email"])){$email = $_POST["email"];} else {$formError = true;}
+				if (!empty($_POST["phone"])){$phone = $_POST["phone"];} else {$formError = true;}
+				if (!empty($_POST["salesperson"])){$salesperson = $_POST["salesperson"];} else {$formError = true;}
+				if (!empty($_POST["purchase"])){$purchase = $_POST["purchase"];} else {$formError = true;}
+				if (!empty($_POST["car"])){$car = $_POST["car"];} else {$formError = true;}
 
-				$tbl_name="customers"; // Table name 
+				if (!$formError){
+					$tbl_name="customers"; // Table name 
 
-				// Connect to server and select databse.
-				mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
-				mysql_select_db("$db_name")or die("cannot select DB");
+					// Connect to server and select databse.
+					mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+					mysql_select_db("$db_name")or die("cannot select DB");
 
-				$sql="INSERT INTO $tbl_name (`First Name`, `Last Name`, `Address`, `Suburb`, `Post Code`, `Phone`, `Email`, `Date Of Purchase`, `SalespersonID`, `CarID`)
-				VALUES ('$firstname', '$lastname', '$address', '$suburb', '$postcode', '$email', '$phone', '$purchase', '$salesperson', '$car')";
-				$result=mysql_query($sql);
-				if($result) {
-				    echo("<br>New Client added");
-				} else {
-				   echo("<br>Data Input Failed");
+					$sql="INSERT INTO $tbl_name (`First Name`, `Last Name`, `Address`, `Suburb`, `Post Code`, `Phone`, `Email`, `Date Of Purchase`, `SalespersonID`, `CarID`)
+					VALUES ('$firstname', '$lastname', '$address', '$suburb', '$postcode', '$email', '$phone', '$purchase', '$salesperson', '$car')";
+					$result=mysql_query($sql);
+					if(!$result) {
+					 	$dbError = true;
+					 	echo mysql_errno() . ": " . mysql_error() . "\n";
+					}
 				}
 			}
 
@@ -52,43 +54,63 @@
 					<h2>Add New Client</h2>
 						<span>First Name: </span>
 						<label class="firstname">
-							<input id="firstname" class="inputLeft" type="text" name="firstname" />
+							<input id="firstname" class="inputLeft" type="text" name="firstname" 
+							<?php if ($formError){if(empty($firstname)){echo 'placeholder="Required"';}else{echo 'value="'.$firstname.'"';}}?>
+						/>
 						</label>
 						<label class="lastname">
 						<span>Last Name: </span>
-							<input id="lastname" type="text" name="lastname" />
+							<input id="lastname" type="text" name="lastname" 
+							<?php if ($formError){if(empty($lastname)){echo 'placeholder="Required"';}else{echo 'value="'.$lastname.'"';}}?>
+						/>
 						</label><br>
 						<span>Address: </span>
 						<label class="address">
-							<input id="address" class="inputLeft" type="text" name="address" />
+							<input id="address" class="inputLeft" type="text" name="address" 
+							<?php if ($formError){if(empty($address)){echo 'placeholder="Required"';}else{echo 'value="'.$address.'"';}}?>
+						/>
 						</label>
 						<label class="suburb">
 						<span>Suburb: </span>
-							<input id="suburb" type="text" name="suburb" />
+							<input id="suburb" type="text" name="suburb" 
+							<?php if ($formError){if(empty($suburb)){echo 'placeholder="Required"';}else{echo 'value="'.$suburb.'"';}}?>
+						/>
 						</label><br>
 						<span>Postcode: </span>
 						<label class="postcode">
-							<input id="postcode" class="inputLeft" type="text" name="postcode" />
+							<input id="postcode" class="inputLeft" type="text" name="postcode" 
+							<?php if ($formError){if(empty($postcode)){echo 'placeholder="Required"';}else{echo 'value="'.$postcode.'"';}}?>
+						/>
 						</label>
 						<label class="phone">
 						<span>Phone: </span>
-							<input id="phone" type="text" name="phone" />
+							<input id="phone" type="text" name="phone" 
+							<?php if ($formError){if(empty($phone)){echo 'placeholder="Required"';}else{echo 'value="'.$phone.'"';}}?>
+						/>
 						</label><br>
 						<span>Email: </span>
 						<label class="clientemail">
-							<input id="email" class="inputLeft" type="text" name="email" />
+							<input id="email" class="inputLeft" type="text" name="email" 
+							<?php if ($formError){if(empty($email)){echo 'placeholder="Required"';}else{echo 'value="'.$email.'"';}}?>
+						/>
 						</label>
 						<label class="salesperson">
-						<span>Salesperson: </span>
-							<input id="salesperson" type="text" name="salesperson" />
+						<span>SalespersonID: </span>
+							<input id="salesperson" type="text" name="salesperson"
+							<?php if ($formError){if(empty($salesperson)){echo 'placeholder="Required"';}else{echo 'value="'.$salesperson.'"';}}?>
+						/>
 						</label><br>
 						<label class="purchase">
 						<span>Date of Purchase: </span>
-							<input id="purchase" class="inputLeft" type="text" name="purchase" />
+							<input id="purchase" class="inputLeft" type="text" name="purchase" 
+							<?php if ($formError){if(empty($purchase)){echo 'placeholder="Required"';}else{echo 'value="'.$purchase.'"';}}?>
+						/>
 						</label>
 						<label class="clientcar">
 						<span>Car Purchased: </span>
-							<input id="car" type="text" name="car" />
+							<input id="car" type="text" name="car" placeholder="Requires Valid CarID"
+							<?php if ($formError){if(empty($car)){echo 'placeholder="Required"';}else{echo 'value="'.$car.'"';}}?>
+						/>
 						</label><br>
 						<label class="buttonclient">
 							<input id="button" type="submit" value="Add Client" />
@@ -109,7 +131,7 @@
 					<th>Salesperson</th>
 					<th>Car</th>
 				</tr>
-				<?php include "credentials.php";
+				<?php
 				$tbl_name="customers"; // Table name 
 
 				// Connect to server and select databse.
@@ -139,7 +161,7 @@
 		</div>	
 	</div>
 	<footer>
-		<a href="pages/privacy_policy.html">Privacy Policy </a> 
+		<a href="pages/privacy_policy.php">Privacy Policy </a> 
 		<p>© 2013 West Coast Auto</p>
 	</footer>
 </body>

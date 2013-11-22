@@ -17,25 +17,25 @@
 			<div class="login">
 				<form name="login" id="login">
 					<h1>Login</h1>
-						<label class="loginemail">
-						<span>Email: </span>
-							<input id="email" type="text" name="email" />
-						</label><br>
-						<label class="password">
-						<span>Password: </span>					
-							<input id="password" type="text" name="password" /> <!--Only employees who are logged in can access the last tab on the nav bar -->
-						</label><br>
-						<label class="buttonlogin">
-							<input id="button" type="submit" value="Login" />
-						</label><br>
-						<a href="password.html">Forgot your password?</a>
-						<span id="invalid"></span>
+					<label class="loginemail">
+					<span>Email: </span>
+						<input id="email" type="text" name="email" />
+					</label><br>
+					<label class="password">
+					<span>Password: </span>					
+						<input id="password" type="text" name="password" /> <!--Only employees who are logged in can access the last tab on the nav bar -->
+					</label><br>
+					<label class="buttonlogin">
+						<input id="button" type="submit" value="Login" />
+					</label><br>
+					<a href="password.html">Forgot your password?</a>
+					<span id="invalid"></span>
 				</form>	
 			</div>		
 		</div>	
 	</div>
 	<footer>
-		<a href="privacy_policy.html">Privacy Policy </a>
+		<a href="privacy_policy.php">Privacy Policy </a>
 		<p>© 2013 West Coast Auto</p>
 	</footer>
 <script type="text/javascript">
