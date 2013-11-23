@@ -28,7 +28,6 @@
 					<label class="buttonlogin">
 						<input id="button" type="submit" value="Login" />
 					</label><br>
-					<a href="password.html">Forgot your password?</a>
 					<span id="invalid"></span>
 				</form>	
 			</div>		
