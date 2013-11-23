@@ -161,7 +161,7 @@
 		</div>
 	</div>
 	<footer>
-		<a href="pages/privacy_policy.php">Privacy Policy </a>
+		<a href="privacy_policy.php">Privacy Policy </a>
 		<p>© 2013 West Coast Auto</p>
 	</footer>
 </body>
