@@ -142,7 +142,7 @@
 						</select>
 					</label><br>
 					<label>
-						<span>Year: </span>
+						<span>Year (YYYY): </span>
 						<input id="year" class="inputLeft" type="text" name="year"
 						<?php if ($formError){if(empty($year)){echo 'placeholder="Required"';}else{echo 'value="'.$year.'"';}}?> />
 					</label>
@@ -158,7 +158,7 @@
 					</label>
 					<label>
 						<span>Reg Expiry: </span>
-						<input id="expiry" type="text" name="expiry" />
+						<input id="expiry" type="text" name="expiry" placeholder="YYYY-MM-DD" />
 					</label><br>
 					<label>
 						<span>Reg Plate: </span>
