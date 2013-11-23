@@ -1,6 +1,6 @@
 /* Header definitions*/
 .banner {
-	height: auto;	
+	height: auto;
 	width: 1200px;
 	display: inline-block;
 }
@@ -85,7 +85,7 @@ nav li:hover li a:hover {
     background: #31B404;
 }
 
-nav a:visited { 
+nav a:visited {
 	background-color: #0B610B;
 }
 /* End main navigation definitions*/
@@ -148,6 +148,13 @@ nav a:visited {
 	margin-left: 150px;
 }
 
+.desc span {
+	font-size: 16px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	color: #298A08;
+	font-weight: bold;
+}
+
 .descRight {
 	margin-left: 100px;
 	width: 500px;
@@ -189,14 +196,36 @@ nav a:visited {
 	width: 500px;
 }
 
-.specialleft {
-	float: left;
-	margin-left: 120px;
+.specialContainer {
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.specialright {
-	float: right;
-	margin-right: 120px;
+.specialRight span {
+	font-size: 16px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	color: #298A08;
+	font-weight: bold;
+}
+
+.specialLeft span {
+	font-size: 16px;
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	color: #298A08;
+	font-weight: bold;
+}
+
+.specialLeft {
+	display: inline-block;
+	width: 200px;
+	text-align: left;
+}
+
+.specialRight {
+	display: inline-block;
+	width: 200px;
+	text-align: left;
 }
 
 .carlist {
@@ -360,6 +389,14 @@ form a {
 .addclient input {
 	font-family: sans-serif, Helvetica, Arial, Verdana;
 	border-radius: 5px;
+	width: 150px;
+	border: 2px groove #298A08;
+}
+
+.addclient select {
+	font-family: sans-serif, Helvetica, Arial, Verdana;
+	border-radius: 5px;
+	width: 154px;
 	border: 2px groove #298A08;
 }
 
@@ -578,7 +615,7 @@ footer {
 	text-align: center;
 	font-size: 10px;
 	margin-top: 10px;
-	padding-bottom: 5px;	
+	padding-bottom: 5px;
 }
 
 footer p {

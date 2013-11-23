@@ -66,12 +66,11 @@
 				} else {$formError = true;}
 
 				if (!$formError){
-					$tbl_name="cars"; // Table name 
-
 					// Connect to server and select databse.
-					mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+					mysql_connect("$host", "$username", "$password")or die("cannot connect");
 					mysql_select_db("$db_name")or die("cannot select DB");
 
+					$tbl_name="cars"; // Table name
 					$sql="INSERT INTO $tbl_name (`CategoryID`, `ManufacturerID`,
 					 `Model`, `Year`, `Price`, `Kilometres`, `Colour`, `Registration Expiry`,
 					 `Registration Plate`, `VIN`, `Cylinders`, `Fuel`, `Transmission`,
@@ -82,7 +81,7 @@
 					 	'$special', '$img1', '$img2', '$img3')";
 					$result=mysql_query($sql);
 					if($result) {
-					    echo("<br>New Car added");
+					    echo '<div style="text-align: center"><h2>New Car Added</h2></div>';
 					} else {
 						$dbError = true;
 						echo mysql_errno() . ": " . mysql_error() . "\n";
@@ -90,126 +89,142 @@
 				}
 			}
 
+			// Connect to server and select databse.
+			mysql_connect("$host", "$username", "$password")or die("cannot connect");
+			mysql_select_db("$db_name")or die("cannot select DB");
+
+			$tbl_name="manufacturers"; // Table name
+			$sql="SELECT * FROM $tbl_name";
+			$manufacs=mysql_query($sql);
+			if(!$manufacs) {
+			 	$dbError = true;
+			 	echo mysql_errno() . ": " . mysql_error() . "\n";
+			}
+
+			$tbl_name="category"; // Table name
+			$sql="SELECT * FROM $tbl_name";
+			$cats=mysql_query($sql);
+			if(!$cats) {
+			 	$dbError = true;
+			 	echo mysql_errno() . ": " . mysql_error() . "\n";
+			}
+
 			?>
 			<div class="addvehicle">
 				<form name="addvehicle" enctype="multipart/form-data" id="addvehicle" method="POST">
 					<h2>Vehicle Form</h2>
 					<label>
-					<span>Special:</span>
+						<span>Special:</span>
 						<select class="inputLeft" name="special">
 							<option value="0">No</option>
 							<option value="1">Yes</option>
 						</select>
 					</label>
 					<label>
-					<span>Manufacturer: </span>
+						<span>Manufacturer: </span>
 						<select name="manufacturer">
-							<option value="Toyota">Toyota</option>
-							<option value="Holden">Holden</option>
-							<option value="Ford">Ford</option>
+						<?php while($row = mysql_fetch_assoc($manufacs)) {?>
+							<option value="<?php echo $row["ManufacturerID"]; ?>"><?php echo $row["ManufacturerID"]; ?></option>
+						<?php } ?>
 						</select>
 					</label><br>
-					<label>												
-					<span>Model: </span>
-						<input id="model" class="inputLeft" type="text" name="model" 
-							<?php if ($formError){if(empty($model)){echo 'placeholder="Required"';}else{echo 'value="'.$model.'"';}}?>
-						/>
+					<label>
+						<span>Model: </span>
+						<input id="model" class="inputLeft" type="text" name="model"
+						<?php if ($formError){if(empty($model)){echo 'placeholder="Required"';}else{echo 'value="'.$model.'"';}}?> />
 					</label>
 					<label>
-					<span>Category: </span>
+						<span>Category: </span>
 						<select name="category">
-							<option value="Ute">Ute</option>
-							<option value="4WD">4WD</option>
-							<option value="Wagon">Wagon</option>
+						<?php while($row = mysql_fetch_assoc($cats)) {?>
+							<option value="<?php echo $row["CategoryID"]; ?>"><?php echo $row["CategoryID"]; ?></option>
+						<?php } ?>
 						</select>
 					</label><br>
 					<label>
-					<span>Year: </span>
-						<input id="year" class="inputLeft" type="text" name="year" 
-							<?php if ($formError){if(empty($year)){echo 'placeholder="Required"';}else{echo 'value="'.$year.'"';}}?>
-						/>
+						<span>Year: </span>
+						<input id="year" class="inputLeft" type="text" name="year"
+						<?php if ($formError){if(empty($year)){echo 'placeholder="Required"';}else{echo 'value="'.$year.'"';}}?> />
 					</label>
 					<label>
-					<span>Price: </span>
-						<input id="price" type="text" name="price" 
-							<?php if ($formError){if(empty($price)){echo 'placeholder="Required"';}else{echo 'value="'.$price.'"';}}?>
-						/>
+						<span>Price: </span>
+						<input id="price" type="text" name="price"
+						<?php if ($formError){if(empty($price)){echo 'placeholder="Required"';}else{echo 'value="'.$price.'"';}}?> />
 					</label><br>
 					<label>
-					<span>Kilometres: </span>
-						<input id="kilometres" class="inputLeft" type="text" name="kilometres" 
-							<?php if ($formError){if(empty($kilometres)){echo 'placeholder="Required"';}else{echo 'value="'.$kilometres.'"';}}?>
-						/>
+						<span>Kilometres: </span>
+						<input id="kilometres" class="inputLeft" type="text" name="kilometres"
+						<?php if ($formError){if(empty($kilometres)){echo 'placeholder="Required"';}else{echo 'value="'.$kilometres.'"';}}?> />
 					</label>
 					<label>
-					<span>Reg Expiry: </span>
+						<span>Reg Expiry: </span>
 						<input id="expiry" type="text" name="expiry" />
 					</label><br>
 					<label>
-					<span>Reg Plate: </span>
+						<span>Reg Plate: </span>
 						<input id="rego" class="inputLeft" type="text" name="rego" />
 					</label>
 					<label>
-					<span>Colour: </span>
+						<span>Colour: </span>
 						<select name="colour">
-							<option value="pink">Pink</option>
+							<option value="Pink">Pink</option>
 							<option value="black">Black</option>
-							<option value="purple">Purple</option>
+							<option value="Purple">Purple</option>
+							<option value="Red">Red</option>
+							<option value="Blue">Blue</option>
+							<option value="Silver">Silver</option>
+							<option value="White">White</option>
 						</select>
 					</label><br>
 					<label>
-					<span>VIN: </span>
-						<input id="vin" class="inputLeft" type="text" name="vin" 
-							<?php if ($formError){if(empty($vin)){echo 'placeholder="Required"';}else{echo 'value="'.$vin.'"';}}?>
-						/>
+						<span>VIN: </span>
+						<input id="vin" class="inputLeft" type="text" name="vin"
+						<?php if ($formError){if(empty($vin)){echo 'placeholder="Required"';}else{echo 'value="'.$vin.'"';}}?> />
 					</label>
 					<label>
-					<span>Cylinders: </span>
-						<input id="cylinders" type="text" name="cylinders" 
-							<?php if ($formError){if(empty($cylinders)){echo 'placeholder="Required"';}else{echo 'value="'.$cylinders.'"';}}?>
-						/>
+						<span>Cylinders: </span>
+						<input id="cylinders" type="text" name="cylinders"
+						<?php if ($formError){if(empty($cylinders)){echo 'placeholder="Required"';}else{echo 'value="'.$cylinders.'"';}}?> />
 					</label><br>
 					<label>
-					<span>Fuel: </span>
-						<input id="fuel" class="inputLeft" type="text" name="fuel" 
-							<?php if ($formError){if(empty($fuel)){echo 'placeholder="Required"';}else{echo 'value="'.$fuel.'"';}}?>
-						/>
+						<span>Fuel: </span>
+						<input id="fuel" class="inputLeft" type="text" name="fuel"
+						<?php if ($formError){if(empty($fuel)){echo 'placeholder="Required"';}else{echo 'value="'.$fuel.'"';}}?> />
 					</label>
 					<label>
-					<span>Transmission: </span>
-						<input id="transmission" type="text" name="transmission" 
-							<?php if ($formError){if(empty($transmission)){echo 'placeholder="Required"';}else{echo 'value="'.$transmission.'"';}}?>
-						/>
+						<span>Transmission: </span>
+						<input id="transmission" type="text" name="transmission"
+						<?php if ($formError){if(empty($transmission)){echo 'placeholder="Required"';}else{echo 'value="'.$transmission.'"';}}?> />
 					</label><br>
 					<label>
-					<span>Sold: </span>
+						<span>Sold: </span>
 						<select name="sold" class="inputLeft" >
 							<option value="0">No</option> <!--If sold the car will not show up on the used vehicles page -->
 							<option value="1">Yes</option>
 						</select>
 					</label>
 					<label>
-					<span style="width: 100px">Image1: </span>
+						<span style="width: 100px">Image1: </span>
 						<input name="MAX_FILE_SIZE" value="1024000" type="hidden">
 						<input id="img1" accept="image/*" type="file" name="img1" style="width: 220px" />
 					</label><br>
 					<label>
-					<span style="width: 100px">Image2: </span>
+						<span style="width: 100px">Image2: </span>
 						<input id="img2" class="inputLeft" accept="image/*" type="file" name="img2"  style="width: 220px" />
 					</label>
 					<label>
-					<span style="width: 100px">Image3: </span>
+						<span style="width: 100px">Image3: </span>
 						<input id="img3" accept="image/*" type="file" name="img3"  style="width: 220px" />
 					</label><br />
 					<label class="buttonvehicle">
 						<input id="button" type="submit" value="Add Vehicle" />
 					</label>
-				</form>	
+				</form>
 			</div>
 		<?php else: ?>
 		<h1>Not Authenticated</h1>
 		<?php endif; ?>
-		</div>	
+		</div>
 	</div>
 	<footer>
 		<a href="privacy_policy.php">Privacy Policy </a>

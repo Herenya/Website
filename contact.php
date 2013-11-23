@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta content="home, index, frontpage" name="keywords"/>
 <meta content="How to contact WCA" name="description" />
+<script type="text/javascript" src="js/script.js"></script>
 <link href="css/wca.css" rel="stylesheet" type="text/css">
 <title>Contact</title>
 </head>
